@@ -75,7 +75,6 @@
 
         <div id="escolhaCliente">
             <input type="button" value="Login" onclick="window.location.href='principal.php'">
-            <input type="button" value="Cadastre-se" onclick="window.location.href='cadastro.php'">
             <input type="button" name="" id="" value="Agende" onclick="window.location.href=''">
         </div>
     </header>
