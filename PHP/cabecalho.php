@@ -57,7 +57,7 @@
  <body>
     <header>
         <div>
-        <a href="index.php"><h1><b>Bruma</b></h1></a>
+        <a href="../PHP/index.php"><h1><b>Bruma</b></h1></a>
         </div>
 
         <div id="barraPesquisa">
@@ -74,8 +74,10 @@
         </div>
 
         <div id="escolhaCliente">
-            <input type="button" value="Login" onclick="window.location.href='principal.php'">
-            <input type="button" name="" id="" value="Agende" onclick="window.location.href=''">
+            <input type="button" name="" value="Login"
+            onclick="window.location.href='../BD/cadastroUser.php'">
+            <input type="button" name="" id="" value="Agende"
+            onclick="window.location.href=''">
         </div>
     </header>
  </body>

@@ -3,7 +3,7 @@ session_start();
 
 // Se não houver usuário logado, redireciona para o formulário de cadastro/login
 if (empty($_SESSION['login']) || empty($_SESSION['role'])) {
-    header('Location: cadastro.php');
+    header('Location: ../BD/cadastroUser.php');
     exit;
 }
 
