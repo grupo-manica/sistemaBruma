@@ -3,13 +3,13 @@ session_start();
 
 // Se não houver usuário logado, redireciona para o formulário de cadastro/login
 if (empty($_SESSION['login']) || empty($_SESSION['role'])) {
-    header('Location: ../BD/cadastroUser.php');
+    header('Location: ../BD/cadastro.php');
     exit;
 }
 
 
 // Inclui cabeçalho
-include 'cabecalho.php';
+include 'header.php';
 ?>
 
 <main style="padding: 1rem;">
@@ -42,4 +42,4 @@ include 'cabecalho.php';
   </p>
 </main>
 
-<?php include 'rodape.php'; ?>
+<?php include 'header.php'; ?>

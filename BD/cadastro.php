@@ -1,5 +1,5 @@
 <?php
-include '../PHP/cabecalho.php';
+include '../PHP/header.php';
 include '../BD/conexao.php'
 ?>
 
@@ -18,7 +18,7 @@ include '../BD/conexao.php'
   </head>
 
 <body>
-  <form action="../sistemaBruma/PHP/cadastroOK.php" method="POST">
+  <form action="../sistemaBruma/PHP/cadastroSucesso.php" method="POST">
     <fieldset>
       <h2 style="text-align: center;"> <legend><strong>Cadastro de Usuário</strong></legend></h2>
       
@@ -73,4 +73,4 @@ include '../BD/conexao.php'
 </body>
 </html>
 
-<?php include '../PHP/rodape.php'; ?>
+<?php include '../PHP/header.php'; ?>

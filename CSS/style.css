@@ -1,4 +1,4 @@
-/* INDEX.HTML */
+/* INDEX */
 
 * {
     box-sizing: border-box;
@@ -6,32 +6,64 @@
     color: black;
 }
 
-body {
-    background-color: #fff;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+body{
     margin: 0;
     padding: 0;
 }
 
-/*Sessão de Destaque*/
-#sessaoDestaque, #sessaoDestaque2 {
+#home-hero {
+    display: flex;
+    align-items: center;
+}
+
+h2 {
+    font-size: 40px;
+}
+
+#contTxtBtn {
+    font-size: 20px;
+    display: flexbox;
+    padding: 0% 10%;
+}
+
+#btn01{
+    background-color: #000;
+    color: #fff;
+    border-color: none;
+    padding: 08px 30px;
     text-align: center;
+    display: inline-block;
+    font-size: 14px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 4px;
 }
 
-#sessaoDestaque2 {
-    background: linear-gradient(15deg, #ff7f50, #ffc0cb);
+#btn01:hover{
+    background-color: #fff;
+    color: #000;
 }
 
-#destaques1, #destaques2 {
-    display: grid;
+.imgex {
+    background-color: #fff;
 }
 
-#destaques1 {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 5px;
+hr{
+    border: none;
+    height: 20px;
+    background-color: #fff;
 }
 
-#sessaoDestaque2, #destaques2 {
-    grid-template-columns: repeat(3, 1fr);
-    align-items:center;
+
+#socialProof{
+    height: 200px;
+    font-size: 20px;
+    text-align: center;
+    align-items: center;
+}
+
+.socialCircle{
+    display: flexbox;
+    width: 08%;
+    margin: 10px 5px;
 }

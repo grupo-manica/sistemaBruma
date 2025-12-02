@@ -1,6 +1,6 @@
 <?php
 session_start();
-include("cabecalho.php");
+include("header.php");
 
 // Apenas aceita POST
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
@@ -202,4 +202,4 @@ if (!$is_register) {
     exit;
 }
 
-include("rodape.php");
+include("header.php");
