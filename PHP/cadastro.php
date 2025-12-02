@@ -72,10 +72,9 @@
 
     <input type="submit" value="Enviar">
     <input type="reset" value="Limpar">
-  </form>
 </div>
 </div>
-</form>
+    </form>
 </main>
 <?php include 'rodape.php'; ?>
 
