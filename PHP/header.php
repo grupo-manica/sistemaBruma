@@ -69,7 +69,8 @@
         </div>
 
         <div class="login">
-            <button class="buttonEntrar" href="../BD/principal.php">Entrar</button>
+            <!--<button class="buttonEntrar" href="../BD/validacao.php">Entrar</button>-->
+            <input type="button" class="buttonEntrar" value="Entrar" onclick="window.location.href='../BD/validacao.php'">
         </div>
     </header>
  </body>
