@@ -12,7 +12,7 @@
     <br/><br/>
     <fieldset>
 
-    <div id="form_cliente" class="form-box">
+    <div id="form_cliente" class="form-box" action="validacao.php" method="POST">
         <h3>Formulário de Usuário</h3>
 
     <label type="text" name="Nome">Nome:</label>
