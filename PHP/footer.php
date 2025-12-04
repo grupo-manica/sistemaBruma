@@ -82,9 +82,10 @@
     <footer class="footer-minimal" role="contentinfo">
         <div class="footer-container">
 
-            <p class="footer-copyright">
+            <a href="index.php"><p class="footer-copyright">
                 &copy; 2025 Bruma. Todos os direitos reservados.
             </p>
+            </a>
 
             <nav class="footer-nav" aria-label="Footer Social Media Links">
                 <ul>
@@ -116,10 +117,5 @@
             </nav>
         </div>
     </footer>
-<!--<footer>
-    <p class="footer-copyright" style="text-align:center;">
-                &copy; 2025 Bruma. Todos os direitos reservados.
-            </p>
-</footer> !-->
 </body>
 </html>

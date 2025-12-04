@@ -59,7 +59,7 @@
  <body>
     <header class="styleHeader" style="background-color: #fff">
         <div class="logo">
-        <a href="../PHP/index.php"><h1><b>BRUMA</b></h1></a>
+        <a href="index.php"><h1><b>BRUMA</b></h1></a>
         </div>
 
         <div class="navbar">
@@ -69,8 +69,7 @@
         </div>
 
         <div class="login">
-            <!--<button class="buttonEntrar" href="../BD/validacao.php">Entrar</button>-->
-            <input type="button" class="buttonEntrar" value="Entrar" onclick="window.location.href='../BD/validacao.php'">
+            <input type="button" class="buttonEntrar" value="Entrar" onclick="window.location.href='principal.php'">
         </div>
     </header>
  </body>

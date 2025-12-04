@@ -1,23 +1,25 @@
 <?php
 session_start();
-include("cabecalho.php");
+include("header.php");
 
 // Apenas aceita POST
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
-    header('Location: cadastroUser.php');
+    header('Location: cadastro.php');
     exit;
 }
 
 // Normaliza campos (tente pegar pelos nomes que você tem no formulário)
 $nome       = trim($_POST['nome']    ?? $_POST['nome']    ?? '');
 $cpf        = trim($_POST['cpf']     ?? $_POST['cpf']     ?? '');
+$nascimento = trim($_POST['nascimento'] ?? $_POST['birthdate'] ?? '');
+$endereco   = trim($_POST['endereco'] ?? $_POST['address'] ?? '');
 $telefone   = trim($_POST['telefone'] ?? $_POST['phone'] ?? '');
 $email      = trim($_POST['email']   ?? $_POST['email'] ?? '');
-$login_in   = trim($_POST['login']    ?? $_POST['email'] ?? ''); // usado no login
+$login_in   = trim($_POST['login']    ?? $_POST['login'] ?? ''); // usado no login
 $senha      = $_POST['senha'] ?? '';
 
 // Detecta modo: se há campos do cadastro -> modo cadastro; caso contrário -> login
-$is_register = !empty($nome) || !empty($cpf) ||
+$is_register = !empty($nome) || !empty($cpf) || !empty($endereco);
 
 // Lista de usuários (exemplo). Em produção use banco.
 $users = [
@@ -28,6 +30,7 @@ $users = [
         'nome'     => 'Cliente Exemplo',
         'role'     => 'cliente'
     ],
+    
 ];
 
 // Função utilitária
@@ -53,7 +56,7 @@ if ($is_register) {
     }
 
     // CPF — aceita formatos: 000.000.000-00 ou apenas dígitos (11)
-   /* $cpfClean = preg_replace('/\D/', '', $cpf);
+    $cpfClean = preg_replace('/\D/', '', $cpf);
     if ($cpfClean === '') {
         $errors[] = "O CPF é obrigatório.";
     } elseif (!preg_match('/^\d{11}$/', $cpfClean)) {
@@ -88,7 +91,6 @@ if ($is_register) {
     } elseif (!preg_match('/^\d{10,11}$/', $telClean)) {
         $errors[] = "Telefone inválido. Use DDD + número (10 ou 11 dígitos).";
     }
-    
     // Email
     if ($email === '') {
         $errors[] = "O e-mail é obrigatório.";
@@ -112,7 +114,7 @@ if ($is_register) {
             echo "<li>" . htmlspecialchars($err) . "</li>";
         }
         echo "</ul>";
-        echo "<p><a href='cadastroUser.php'>Voltar para o formulário</a></p>";
+        echo "<p><a href='cadastro.php'>Voltar para o formulário</a></p>";
         include("rodape.php");
         exit;
     }
@@ -125,8 +127,6 @@ if ($is_register) {
     $_SESSION['login'] = $login_in !== '' ? $login_in : strtolower(strtok($email, '@')); // exemplo de login
     $_SESSION['email'] = $email;
     $_SESSION['nome']  = $nome;
-   
-
     // OBS: em produção, NÃO guarde a senha em texto puro na sessão.
     // Use password_hash() ao salvar e NÃO salve a senha na sessão.
     $_SESSION['senha'] = $senha;
@@ -154,7 +154,7 @@ if (!$is_register) {
             echo "<li>" . htmlspecialchars($err) . "</li>";
         }
         echo "</ul>";
-        echo "<p><a href='cadastro.php'>Voltar para o formulário</a></p>";
+        echo "<p><a href='cadastroUser.php'>Voltar para o formulário</a></p>";
         include("rodape.php");
         exit;
     }
@@ -171,7 +171,7 @@ if (!$is_register) {
     // compara senha (texto aqui) — em produção password_verify()
     if ($senha !== $user['password']) {
         echo "<h2 style='color:red;'>Senha incorreta.</h2>";
-        echo "<p><a href='cadastro.php'>Voltar</a></p>";
+        echo "<p><a href='cadastroUser.php'>Voltar</a></p>";
         include("rodape.php");
         exit;
     }
@@ -185,4 +185,4 @@ if (!$is_register) {
     exit;
 }
 
-include("rodape.php");
+include("footer.php");
